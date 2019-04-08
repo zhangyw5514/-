@@ -11,7 +11,9 @@ Spring Cloud 使用 HTTP 协议的 REST API。
 
 ### 性能比较
 
-使用一个 Pojo 对象包含 10 个属性，请求 10 万次，Dubbo 和 Spring Cloud 在不同的线程数量下，每次请求耗时（ms）如下：
+使用一个 Pojo 对象包含 10 个属性，请求 10 万次，Dubbo 和 Spring Cloud 在不同的线程数量下，每次请求耗时（ms）如下：  
 ![性能对比](https://pic2.zhimg.com/80/v2-bf8fb9e9caddf41a67add4c696b5d9fb_hd.jpg "对比")
 
 说明：客户端和服务端配置均采用阿里云的 ECS 服务器，4 核 8G 配置，Dubbo 采用默认的 Dubbo 协议。点评：Dubbo 支持各种通信协议，而且消费方和服务方使用长链接方式交互，通信速度上略胜 Spring Cloud，如果对于系统的响应时间有严格要求，长链接更合适。
+
+注意：以上仅为简单数据的测试结果，如果接口本身的复杂度较高，通信协议本身的耗时会成为比较小的部分。
